@@ -48,7 +48,7 @@ export default function App() {
         <div className="mt-8 text-center text-xs text-slate-500">© {new Date().getFullYear()} CoolClean AC. All rights reserved.</div>
       </footer>
 
-      <WhatsAppButton phone={'+62 812-3456-7890'} />
+      <WhatsAppButton phone={'08987769911'} />
     </div>
   );
 }

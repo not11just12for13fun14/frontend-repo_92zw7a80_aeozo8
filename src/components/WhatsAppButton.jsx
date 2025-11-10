@@ -1,8 +1,19 @@
 import { MessageCircle } from 'lucide-react';
 
+function normalizePhone(input) {
+  // Keep digits only
+  let digits = (input || '').replace(/[^\d]/g, '');
+  // If starts with 0, assume Indonesia and convert to 62
+  if (digits.startsWith('0')) {
+    digits = '62' + digits.slice(1);
+  }
+  return digits;
+}
+
 export default function WhatsAppButton({ phone = '+6281234567890' }) {
   const msg = encodeURIComponent('Halo, saya ingin booking layanan cleaning AC.');
-  const waLink = `https://wa.me/${phone.replace(/[^\d]/g, '')}?text=${msg}`;
+  const normalized = normalizePhone(phone);
+  const waLink = `https://wa.me/${normalized}?text=${msg}`;
 
   return (
     <a
