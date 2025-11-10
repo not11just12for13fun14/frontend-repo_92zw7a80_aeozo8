@@ -1,58 +1,58 @@
+import { Droplets, Gauge, ShieldCheck, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Sparkles, ShieldCheck, Gauge, Droplets } from 'lucide-react';
 
 const services = [
   {
     icon: Droplets,
-    title: 'Cuci AC Split',
-    desc: 'Pembersihan indoor & outdoor unit, blower, filter, dan saluran pembuangan.',
-    price: 'Mulai 120K'
+    title: 'Cuci AC Rutin',
+    desc: 'Pembersihan unit indoor & outdoor, cek freon, dan uji kebocoran.',
+    price: 'Rp150.000 - 200.000'
   },
   {
     icon: Gauge,
-    title: 'Cek Freon & Tekanan',
-    desc: 'Pengecekan kebocoran, tekanan freon, dan performa pendinginan optimal.',
-    price: 'Mulai 60K'
+    title: 'Tambah / Isi Freon',
+    desc: 'Pengisian freon R32/R410 sesuai standar pabrikan.',
+    price: 'Mulai Rp200.000'
   },
   {
     icon: ShieldCheck,
-    title: 'Antibacterial Treatment',
-    desc: 'Sanitasi evaporator untuk membunuh bakteri & jamur penyebab bau.',
-    price: 'Mulai 80K'
+    title: 'Service Berkala',
+    desc: 'Pengecekan menyeluruh, pengencangan baut, dan perawatan preventif.',
+    price: 'Mulai Rp180.000'
   },
   {
     icon: Sparkles,
     title: 'Deep Cleaning',
-    desc: 'Pembongkaran menyeluruh untuk unit yang sangat kotor atau lama tidak dirawat.',
-    price: 'Mulai 250K'
+    desc: 'Bongkar total, semprot tekanan tinggi, dan desinfeksi evaporator.',
+    price: 'Mulai Rp300.000'
   }
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-white to-slate-50">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Layanan Kami</h2>
-          <p className="mt-3 text-slate-600">Pilih paket yang sesuai dengan kebutuhan AC Anda</p>
+    <section id="services" className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Layanan Kami</h2>
+          <p className="mt-3 text-slate-600">Pilih layanan sesuai kebutuhan AC Anda.</p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s, idx) => (
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="rounded-xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md transition"
             >
-              <div className="mb-4 inline-flex rounded-xl bg-sky-50 p-3 text-sky-600 group-hover:bg-sky-100">
-                <s.icon className="h-6 w-6" />
+              <div className="w-11 h-11 rounded-lg bg-sky-100 text-sky-600 grid place-items-center mb-4">
+                <s.icon size={22} />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900">{s.title}</h3>
+              <h3 className="font-semibold text-slate-900">{s.title}</h3>
               <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
-              <div className="mt-4 font-semibold text-sky-700">{s.price}</div>
+              <p className="mt-4 text-sky-700 font-medium">{s.price}</p>
             </motion.div>
           ))}
         </div>

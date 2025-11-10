@@ -1,45 +1,45 @@
-import { motion } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/8qyZ5fQkzQ6k4i4v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        {/* Replace with your Spline scene URL if desired */}
+        <Spline scene="https://prod.spline.design/6m8k8fWf6gypZJ9I/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 pt-28 pb-24 md:pt-36 md:pb-40">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white"></div>
-        <div className="relative">
+
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-transparent pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+        <div className="py-24 md:py-36">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900"
+            className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900"
           >
-            Jasa Cleaning AC Profesional
+            Layanan Cleaning AC Profesional
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-lg text-slate-600"
+            className="mt-4 text-lg text-slate-600"
           >
-            Bersihkan AC Anda agar tetap dingin, hemat listrik, dan sehat. Teknisi bersertifikat, garansi pengerjaan, dan jadwal fleksibel.
+            Udara lebih bersih, AC lebih dingin, tagihan listrik lebih hemat. Tim teknisi bersertifikat siap ke lokasi Anda.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-8 flex flex-col sm:flex-row gap-3"
+            className="mt-8 flex flex-wrap gap-3"
           >
-            <a href="#booking" className="inline-flex items-center justify-center rounded-full bg-sky-600 px-6 py-3 text-white font-semibold shadow-lg hover:bg-sky-700">
-              Pesan Sekarang
-            </a>
-            <a href="#services" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 font-semibold text-slate-700 shadow ring-1 ring-slate-200 hover:bg-slate-50">
-              Lihat Layanan
-            </a>
+            <a href="#booking" className="px-6 py-3 rounded-md bg-sky-600 text-white hover:bg-sky-700 transition">Pesan Sekarang</a>
+            <a href="#services" className="px-6 py-3 rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50 transition">Lihat Layanan</a>
           </motion.div>
         </div>
+        <div className="hidden md:block" />
       </div>
     </section>
   );
